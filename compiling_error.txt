@@ -1,0 +1,3 @@
+/usr/lib/gcc/x86_64-linux-gnu/6/../../../x86_64-linux-gnu/Scrt1.o: En la función `_start':
+(.text+0x20): referencia a `main' sin definir
+collect2: error: ld returned 1 exit status
