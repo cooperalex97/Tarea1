@@ -7,7 +7,7 @@ void reasignarmemoria(char *a,int b)
 	a = new char [N+b+2];
 }
 
-int strlen(char a[])
+int strlen(char a[])// saca el tamaño de la  cadena 
 {
 	char *ptr=&a[0];
 	char * ptr2;
