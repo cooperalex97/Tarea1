@@ -20,21 +20,10 @@ char * invertir(char *s){
     return t;
 }
 
-int main()
-{
-  int i=0,op;
-  while(i==0)
-  {
-    char cad[] = "";
-    cout<<"\t\tINVERTIENDO PALABRAS\n"<<endl;
-    cout<<"Palabra?  ";
-    cin>> cad;
-    cout<<"Cadena invertida invertida: "<<invertir(cad)<<endl;
-    cout<<"\nPara Salir ingrese 1"<<endl;
-    cout<<"Para continuar ingrese otro numero"<<endl;
-    cout<<"Salir? ";cin>>op;
-    cout<<"--------------------------------------------\n"<<endl;
-    if(op==1)
-      break;
-  }
+int main() {
+  char cad[] = "";
+  cout<<"Cadena? ";
+  cin>> cad;
+  cout<<"Palabra al revez: "<<invertir(cad)<<endl;
+  return 0;
 }
