@@ -1,52 +1,58 @@
-// Problema 10
 #include <iostream>
 
 using namespace std;
 
-float pow(int x,int y)
+float char_to_float(char A[])
 {
-	float con=1;
-	if (y==0) return con;
-	for (int i=0;i<y;i++)
-	{
-		con*=x;
-	}
-	return con;
-}
+    int n = 0, tam = 0;
+    float x = 0.0;
+    for(int i = 0; A[i] != '\0'; i++)
+    {
+        if(A[i] == '.')
+        {
+            for(int j = i + 1; A[j] != '\0'; j++)
+                n++;
+        }
+        tam++;
+    }
+    int s = 1;
 
-int strlen(char a[])
-{
-	char *ptr=&a[0];
-	char * ptr2;
-	int i=0;
-	do
-	{
-		if(a[i]=='\0') ptr2=&a[i];
-	}while(a[i++]!='\0');
-	return ptr2-ptr;
-}
-
-float convertir(char b[])
-{
-	int j=strlen(b);
-	float cont=0;
-	int exp=0;
-	for(int i=j-1;i>=0;i--)
-	{
-		if(b[i]==',') 
-		{
-			cont/=(pow(10,exp));
-			exp=-1;
-		}
-		else cont+=((b[i]-'0')*pow(10,exp));
-		exp++;
-	}
-	return cont;
+    for(int i = tam - 1; i >= 0; i--)
+    {
+        if(A[i] == '1')
+            x += 1 * s;
+        if(A[i] == '2')
+            x += 2 * s;
+        if(A[i] == '3')
+            x += 3 * s;
+        if(A[i] == '4')
+            x += 4 * s;
+        if(A[i] == '5')
+            x += 5 * s;
+        if(A[i] == '6')
+            x += 6 * s;
+        if(A[i] == '7')
+            x += 7 * s;
+        if(A[i] == '8')
+            x += 8 * s;
+        if(A[i] == '9')
+            x += 9 * s;
+        if(A[i] == '.')
+            s /= 10;
+        s *= 10;
+    }
+    float tt = 0.0;
+    //float a = 10^n;
+    tt = x / 100.0;
+    return tt;
 }
 
 int main()
 {
-	char a[100]={"7,58"};
-	cout<<convertir(a)<<endl;
-	return 0;
+    char num[] = "13.23";
+    float z;
+    z = char_to_float(num);
+    cout.precision(2);
+    cout << "Precision: " << fixed << z << endl;
+    return 0;
 }
