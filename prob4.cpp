@@ -30,7 +30,7 @@ void productMatrix (int A[10][10],int B[10][10],int C[10][10],int fil,int col)
  for (int i=0;i<fil;i++)
      for(int j=0;j<col;j++)
       {   C[i][j] = 0;
-          for(int k=0;k<fil*col;k++)
+          for(int k=0;k<col;k++)
               C[i][j] = C[i][j] + A[i][j] * B[i][j];
       }
  }
